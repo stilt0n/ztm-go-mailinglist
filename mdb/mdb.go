@@ -73,7 +73,7 @@ func GetEmail(db *sql.DB, email string) (*EmailEntry, error) {
 	rows, err := db.Query(`
 		SELECT id, email, confirmed_at, opt_out
 		FROM emails
-		WHERE emails = ?
+		WHERE email = ?
 	`, email)
 
 	if err != nil {
